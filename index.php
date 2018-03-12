@@ -7,6 +7,7 @@
  */
 //正确的路由应该是：http://www.myfram.com/TestController/test/a/123
 echo '哼~';
+//test
 $documentPath = $_SERVER['DOCUMENT_ROOT'];
 $filePath = __FILE__;
 $requestUri = $_SERVER['REQUEST_URI'];
