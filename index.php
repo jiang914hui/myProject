@@ -13,9 +13,6 @@ $requestUri = $_SERVER['REQUEST_URI'];
 
 $router = explode('/',$requestUri);
 $paramCount = count($router);
-$controller = empty($router[1])?'index':$router[1];
-
-$method = empty($router[2])?'index':$router[2];
 
 if ($paramCount < 2 || ($paramCount % 2) == 0) {
     die('参数错误');
@@ -26,8 +23,10 @@ if ($paramCount < 2 || ($paramCount % 2) == 0) {
         $param = array_merge($param, $arr_temp_hash);
     }
 }
-var_dump($param.$controller.$method);die;
-$module_name = $controller;
+//var_dump($param);die;
+$controller = $router[1];
+$method = $router[2];
+$module_name = $controller.'Controller';
 $module_file = 'action/' . $module_name . '.php';
 if (file_exists($module_file)) {
     include $module_file;

@@ -9,6 +9,6 @@
 class TestController
 {
     public function test($param){
-        print_r($param['a']);
+        print_r($param);
     }
 }
